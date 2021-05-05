@@ -12,7 +12,7 @@ class Item(BaseModel):
     user: str
     password: str
     method: int
-    dir: str # 1: login 2: upload 3:download
+    dir: Optional[str] = None # 1: login 2: upload 3:download
 
 # ftpbench -h 159.75.123.97 -u uftp -p axziOblYTpz5Yh663KaA login
 def execute_ftpbench(item:Item):

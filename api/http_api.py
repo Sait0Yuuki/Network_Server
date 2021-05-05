@@ -53,4 +53,6 @@ def handle_get(item:Item):
 @router.post('')
 def handle_http(item:Item):
     if(item.method == 'GET'):
-        handle_get(item)
+        res =handle_get(item)
+    
+    return res

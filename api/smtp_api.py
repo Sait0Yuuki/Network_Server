@@ -29,6 +29,7 @@ def execute_smtpping(item:Item):
     cmd.extend([item.address])
     if(item.server != None):
         cmd.extend(['@'+item.server])
+    print(cmd)
     proc = subprocess.Popen(cmd,stdout=subprocess.PIPE)
     res = proc.communicate()[0].decode('utf-8')
     return res
@@ -52,7 +53,6 @@ def serialize_bench(bench):
             msg[1] = ''.join(fil)
             dict[index][msg[0]] = msg[1]
     return dict
-
 
 @router.post('')
 def handle_smtp(item:Item):
